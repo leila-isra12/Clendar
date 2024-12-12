@@ -1,0 +1,120 @@
+.big-divT {
+  
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Enables flexible layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: flex-start; 
+  
+}
+
+.latest-tasks-containerT {
+   
+    font-family: Georgia, 'Times New Roman', Arial, serif, sans-serif;
+
+    margin-left: 30px;
+    width: 90vw; /* Full viewport width */
+
+  }
+  .right-sectionT {
+    
+    flex: 4; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-sectionT .titleT {
+    text-align: center;
+    font-family:'Amaranth';
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 49px; /* Larger title for better readability */
+    font-weight: 700;
+  }
+  
+  .task-listT,
+  .task-historyT {
+    background-color: white;
+    padding: 20px;
+    border: 1.75px solid #ddd;
+    border-radius: 20px;
+  }
+  
+  .task-listT h2,
+  .task-historyT h2 {
+    font-family:'Amaranth';
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .task-cardT {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #7494ec15;
+    margin-bottom: 10px;
+    position: relative; /* Make the card position relative to its container */
+  }
+  
+  .task-cardT h3 {
+    margin: 0;
+    color: #000000;
+  }
+  .task-cardT p {
+    margin: 7px, 0px, 7px, 0px;
+    color: #000000;
+  }
+  
+  .task-cardT .due-dateT {
+    font-size: 0.9em;
+    color: #3f3f3f;
+  }
+  
+  .task-cardT .complete-btnT {
+    background-color: #7494ec;
+    color: white;
+    padding: 9px 20px;
+    border: none;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .task-cardT .complete-btnT:hover {
+    background-color: #103964;
+  }
+
+  .task-cardT .complete-btnT:focus {
+    outline: none;
+  }
+  
+  .task-cardT.completed {
+    border-color: #28a745;
+    background-color: #e9ffe9;
+  }
+  
+  .task-cardT.completed .statusT {
+    color: #28a745;
+    font-weight: bold;
+  }
+
+
+  
+  .delete-iconT {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 1px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s; 
+  }
+  
+  .delete-iconT:hover {
+    font-size:10px;
+    color: red;
+  }
+  
+  

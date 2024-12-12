@@ -1,0 +1,1025 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure html and body fill the viewport height*/
+  html, body {
+    height: 100%;
+    width: 100%;
+    
+    margin: 0;
+  
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow-y: auto;
+  }
+  
+  /* Ensure .main fills the entire height of the body */
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh; /* Adjust gap using viewport height */
+    width: 100%;
+    height: 100vh; /* Fill the full height of the viewport */
+    background-color: white;
+    padding-left: 20vw; /* Use viewport width */
+    padding-right: calc(2 * 15vw); /* Calculate padding-right using viewport width */
+  }
+  
+  /* Ensure header remains at the top */
+  header {
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+    position: relative;
+    height: auto;
+    background-color: white;
+    color: #0b193f;
+    width: 100%;
+    gap: 2vw; /* Adjust gap using viewport width */
+  }
+  .search-section{
+    width:50%;
+    margin:0;
+  }
+  .search-input {
+    background-color: #ebf0fb;
+    border-radius: 40px;
+    width: 27vw;
+    height: 5vh; /* Adjust height using viewport height */
+    margin: 0;
+    margin-left: 18vw; /* Adjust margin using viewport width */
+    margin-top: 3.5vh; /* Adjust margin using viewport height */
+    border: none;
+    padding: 1.5vw; /* Adjust padding using viewport width */
+    color: #011856;
+  }
+  
+  
+  .people-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: rgb(255, 255, 255);
+    padding: 1;
+    width: 5%;
+    min-width: 20vw; /* Adjust min-width using viewport width */
+    max-width: 35vw; /* Adjust max-width using viewport width */
+    z-index: 10;
+    height: 10vh; /* Adjust height using viewport height */
+    margin-left: 55vw; /* Adjust margin using viewport width */
+    
+  }
+  
+  .header-section {
+    
+    display: flex;
+    flex-direction: row;
+    gap:0;
+    width: 70%;
+    padding-right: 35vw;
+    margin-bottom: 1vh;
+    margin-right: 70%;
+  }
+  
+  /* People Section Title */
+  .people-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  
+  .person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  
+  .person-image {
+    width: 3vw; /* Adjust size using viewport width */
+    height: 3vw; /* Adjust size using viewport width */
+    border-radius: 50%;
+    margin-right: -1vw; /* Adjust margin using viewport width */
+  }
+  
+  .person-name {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .sah_gae {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: calc(100vh - 6vh); /* Adjust using viewport height */
+    margin-left: 1%;
+    gap:5vw;
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .calendrier {
+    display: flex;
+    flex-direction: column;
+    gap: 100vh; /* Adjust gap using viewport height */
+    width: 100%;
+    height: 100%;
+  }
+  .calendrier text{
+    color:#7494ec;
+    font-weight: bold;
+  }
+  
+  .rbc-calendar {
+    flex-grow: 1;
+  }
+  
+  .rbc-month-view {
+    flex-grow: 1;
+  }
+  
+  button {
+    cursor: pointer;
+    border-radius: 35px;
+    width: 150px;
+    height: 70px;
+    color: white;
+  }
+  
+  .selected_date {
+    color: #2d427d;
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .adding_task {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(124, 123, 123);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: solid, color(red green blue);
+    opacity: 0.9;
+    margin: 25%;
+    padding: 4vw; /* Adjust padding using viewport width */
+  }
+  
+  .adding_task h3.text {
+    color: #011856;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1px;
+    font-size: 1rem;
+  }
+  
+  .task_input,
+  .time_input,
+  .location_input {
+    background-color: #bab9bc;
+    border: 2px solid #031956;
+    border-radius: 4px;
+    padding: 0.5vw; /* Adjust padding using viewport width */
+    font-size: 1.6vw; /* Adjust font size using viewport width */
+    margin-bottom: 1.5vh; /* Adjust margin using viewport height */
+    color: #031956;
+    width: 100%;
+    opacity: 1;
+  }
+  
+  .adding_task input::placeholder {
+    color: #7494ec;
+  }
+  
+  .adding_task input:focus {
+    outline: none;
+    border-color: #7494ec;
+    box-shadow: 0 0 0.5vw #112b72; /* Adjust shadow size using viewport width */
+  }
+  
+  .save_button:hover {
+    background-color: #112b72;
+  }
+  
+  .add_task_button:hover {
+    background-color: #112b72;
+  }
+  
+  
+  .add_task_button {
+    background-color: rgb(118, 159, 241);
+    text-decoration-color: #ffffff;
+    width:180px;
+    height:50px;
+  }
+  
+  .save_button{
+    background-color: rgb(118, 159, 241);
+    text-decoration-color: #ffffff;
+    width:180px;
+    height:50px;
+    padding: 1px;
+  }
+  
+  .cancel_button {
+    background-color: #cc2636;
+    text-decoration-color: #ffffff;
+    width:180px;
+    height:50px;
+    padding: 1px;
+  }
+  
+  .cancel_button:hover {
+    background-color: #be0f21;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.6vw; /* Adjust font size using viewport width */
+    font-weight: bold;
+    border: none;
+    border-radius: 20%;
+    padding: 1.2vh 1.8vw; /* Adjust padding using viewport height and width */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48%;
+    margin-top: 1vh; /* Adjust margin using viewport height */
+    gap:10px;
+  }
+  
+  .task {
+    width: 18%;
+    color: #0a1940;
+    margin-left: 10vh;
+    margin-right: 10vh;
+  }
+  
+  .list_tasks li {
+    color: 7494ec;
+    background-color: #f0f0f0;
+    padding: 0.5vh 0; /* Adjust padding using viewport height */
+    font-size: 1.6vw; /* Adjust font size using viewport width */
+    border-radius: 4px;
+  }
+  
+  .list_tasks {
+    background-color: #abaaad;
+    color: 7494ec;
+  }
+  
+  .Page_title {
+    color: 7494ec;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  
+  /* Extra Small Devices (Phones, Folded Devices) */
+  /* Small Devices */
+  @media (max-width: 576px) {
+    .header-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 2vh; /* Adjust gap using viewport height */
+    }
+  
+    .search-input {
+      width: 100%;
+      margin-top: 1.5vh; /* Reduce the margin-top to decrease the gap */
+    }
+  
+    .people-list {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  
+  .all{
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+  }
+  /* Small Devices (
+  
+  
+  /* Container for hamburger icon */
+  .hamburger-container {
+    position: relative;
+  }
+  
+  /* Hamburger icon style (three lines) */
+  .hamburger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+    /* You can change the color here */
+  }
+  
+  /* Side menu styles */
+  .side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for list items in the side menu */
+  .side-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .side-menu li {
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the list items */
+  .side-menu li:hover {
+    background-color: #444;
+  }
+  
+  
+  .rbc-toolbar {
+    gap: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  ;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  #root {
+    max-width: 90%;
+    margin: 0 ;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .rbc-toolbar button {
+    color: #0f4263;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    background-image: none;
+    border: 1px solid #1d1969;
+    padding: 0.3rem 0.25rem;
+    border-radius: 4px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  .rbc-button-link {
+    color: inherit;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Fixed Navbar */
+  .fixed-nav-bar {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 90px;
+    background: linear-gradient(45deg, #6fa3ef, #0047ab); /* Blue gradient */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8rem;
+    padding-right: 5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .fixed-nav-bar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0px;
+  }
+  
+  .fixed-nav-bar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .fixed-nav-bar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .fixed-nav-bar .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .fixed-nav-bar {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem 2rem;
+    }
+  
+    .fixed-nav-bar .nav-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between logo and text */
+  }
+  
+  .logo-image {
+    height: 90px; /* Adjust height to fit navbar */
+    width: auto;  /* Maintain aspect ratio */
+  }
+
+  .main, .sah_gae, .calendrier, .adding_task ,.people-list{
+    position: relative;
+    z-index: 1; /* Make sure these elements stay behind the navbar */
+  }
+  
+  /* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure html and body fill the viewport height*/
+html, body {
+  height: 100%;
+  width: 100%;
+  
+  margin: 0;
+
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow-y: auto;
+}
+
+/* Ensure .main fills the entire height of the body */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh; /* Adjust gap using viewport height */
+  width: 100%;
+  height: 100vh; /* Fill the full height of the viewport */
+  background-color: white;
+  padding-left: 20vw; /* Use viewport width */
+  padding-right: calc(2 * 15vw); /* Calculate padding-right using viewport width */
+}
+
+/* Ensure header remains at the top */
+header {
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  position: relative;
+  height: auto;
+  background-color: white;
+  color: #0b193f;
+  width: 100%;
+  gap: 2vw; /* Adjust gap using viewport width */
+}
+.search-section{
+  width:50%;
+  margin:0;
+}
+.search-input {
+  background-color: #ebf0fb;
+  border-radius: 40px;
+  width: 27vw;
+  height: 5vh; /* Adjust height using viewport height */
+  margin: 0;
+  margin-left: 18vw; /* Adjust margin using viewport width */
+  margin-top: 3.5vh; /* Adjust margin using viewport height */
+  border: none;
+  padding: 1.5vw; /* Adjust padding using viewport width */
+  color: #011856;
+}
+
+
+.people-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: rgb(255, 255, 255);
+  padding: 1;
+  width: 5%;
+  min-width: 20vw; /* Adjust min-width using viewport width */
+  max-width: 35vw; /* Adjust max-width using viewport width */
+  z-index: 10;
+  height: 10vh; /* Adjust height using viewport height */
+  margin-left: 55vw; /* Adjust margin using viewport width */
+  
+}
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  gap:0;
+  width: 70%;
+  padding-right: 35vw;
+  margin-bottom: 1vh;
+  margin-right: 70%;
+}
+
+/* People Section Title */
+.people-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.person-image {
+  width: 3vw; /* Adjust size using viewport width */
+  height: 3vw; /* Adjust size using viewport width */
+  border-radius: 50%;
+  margin-right: -1vw; /* Adjust margin using viewport width */
+}
+
+.person-name {
+  color: white;
+  font-weight: bold;
+}
+
+.sah_gae {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: calc(100vh - 6vh); /* Adjust using viewport height */
+  margin-left: 1%;
+  gap:5vw;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calendrier {
+  display: flex;
+  flex-direction: column;
+  gap: 100vh; /* Adjust gap using viewport height */
+  width: 100%;
+  height: 100%;
+}
+.calendrier text{
+  color:#7494ec;
+  font-weight: bold;
+}
+
+.rbc-calendar {
+  flex-grow: 1;
+}
+
+.rbc-month-view {
+  flex-grow: 1;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 35px;
+  width: 150px;
+  height: 70px;
+  color: white;
+}
+
+.selected_date {
+  color: #2d427d;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.adding_task {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(124, 123, 123);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: solid, color(red green blue);
+  opacity: 0.9;
+  margin: 25%;
+  padding: 4vw; /* Adjust padding using viewport width */
+}
+
+.adding_task h3.text {
+  color: #011856;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1px;
+  font-size: 1rem;
+}
+
+.task_input,
+.time_input,
+.location_input {
+  background-color: #bab9bc;
+  border: 2px solid #031956;
+  border-radius: 4px;
+  padding: 0.5vw; /* Adjust padding using viewport width */
+  font-size: 1.6vw; /* Adjust font size using viewport width */
+  margin-bottom: 1.5vh; /* Adjust margin using viewport height */
+  color: #031956;
+  width: 100%;
+  opacity: 1;
+}
+
+.adding_task input::placeholder {
+  color: #7494ec;
+}
+
+.adding_task input:focus {
+  outline: none;
+  border-color: #7494ec;
+  box-shadow: 0 0 0.5vw #112b72; /* Adjust shadow size using viewport width */
+}
+
+.save_button:hover {
+  background-color: #112b72;
+}
+
+.add_task_button:hover {
+  background-color: #112b72;
+}
+
+
+.add_task_button {
+  background-color: rgb(118, 159, 241);
+  text-decoration-color: #ffffff;
+  width:180px;
+  height:50px;
+}
+
+.save_button{
+  background-color: rgb(118, 159, 241);
+  text-decoration-color: #ffffff;
+  width:180px;
+  height:50px;
+  padding: 1px;
+}
+
+.cancel_button {
+  background-color: #cc2636;
+  text-decoration-color: #ffffff;
+  width:180px;
+  height:50px;
+  padding: 1px;
+}
+
+.cancel_button:hover {
+  background-color: #be0f21;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.6vw; /* Adjust font size using viewport width */
+  font-weight: bold;
+  border: none;
+  border-radius: 20%;
+  padding: 1.2vh 1.8vw; /* Adjust padding using viewport height and width */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+  margin-top: 1vh; /* Adjust margin using viewport height */
+  gap:10px;
+}
+
+.task {
+  width: 18%;
+  color: #0a1940;
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+
+.list_tasks li {
+  color: 7494ec;
+  background-color: #f0f0f0;
+  padding: 0.5vh 0; /* Adjust padding using viewport height */
+  font-size: 1.6vw; /* Adjust font size using viewport width */
+  border-radius: 4px;
+}
+
+.list_tasks {
+  background-color: #abaaad;
+  color: 7494ec;
+}
+
+.Page_title {
+  color: 7494ec;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+  text-align: center;
+}
+
+/* Responsive Design */
+
+/* Extra Small Devices (Phones, Folded Devices) */
+/* Small Devices */
+@media (max-width: 576px) {
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh; /* Adjust gap using viewport height */
+  }
+
+  .search-input {
+    width: 100%;
+    margin-top: 1.5vh; /* Reduce the margin-top to decrease the gap */
+  }
+
+  .people-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.all{
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+/* Small Devices (
+
+
+/* Container for hamburger icon */
+.hamburger-container {
+  position: relative;
+}
+
+/* Hamburger icon style (three lines) */
+.hamburger-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: black;
+  /* You can change the color here */
+}
+
+/* Side menu styles */
+.side-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for list items in the side menu */
+.side-menu ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.side-menu li {
+  padding: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Hover effect for the list items */
+.side-menu li:hover {
+  background-color: #444;
+}
+
+
+.rbc-toolbar {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#root {
+  max-width: 90%;
+  margin: 0 ;
+  padding: 1rem;
+  text-align: center;
+}
+
+.rbc-toolbar button {
+  color: #0f4263;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  background: none;
+  background-image: none;
+  border: 1px solid #1d1969;
+  padding: 0.3rem 0.25rem;
+  border-radius: 4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+.rbc-button-link {
+  color: inherit;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Fixed Navbar */
+.fixed-nav-bar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 90px;
+  background: linear-gradient(45deg, #6fa3ef, #0047ab); /* Blue gradient */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8rem;
+  padding-right: 5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.fixed-nav-bar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0px;
+}
+
+.fixed-nav-bar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.fixed-nav-bar .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.fixed-nav-bar .nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .fixed-nav-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 2rem;
+  }
+
+  .fixed-nav-bar .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds spacing between logo and text */
+}
+
+.logo-image {
+  height: 90px; /* Adjust height to fit navbar */
+  width: auto;  /* Maintain aspect ratio */
+}
+
+.main, .sah_gae, .calendrier, .adding_task ,.people-list{
+  position: relative;
+  z-index: 1; /* Make sure these elements stay behind the navbar */
+}
+
+
+  

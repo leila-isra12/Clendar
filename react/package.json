@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "react-datepicker": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "vite": "^6.0.3"
+  }
+}

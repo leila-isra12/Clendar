@@ -1,0 +1,149 @@
+
+.big-divT {
+  
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Enables flexible layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: flex-start; 
+  
+}
+   .upload-containerT {
+    font-family: Georgia,'Times New Roman', Arial, serif, sans-serif;
+    padding: 50px;
+
+    width: 90vw; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Light background color for the container */
+
+  }
+  
+  .upload-headerT {
+    text-align: center;
+    font-family:'Amaranth';
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 49px; /* Larger title for better readability */
+    font-weight: 700; /* Make title bold */
+  }
+  
+  .upload-buttonT {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color:#7494ec; /* rgb(207, 6, 6); */
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight:600;
+    font-size: 16px; /* Slightly larger button text */
+    margin-left: auto; /* Align the button to the right */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .upload-buttonT:hover {
+    background-color: #103964; /* Darken the button on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  .upload-buttonT:active {
+    background-color: #042b54; /* Darker blue when clicked */
+  }
+  
+  .hidden-inputT {
+    display: none;
+  }
+  
+  .file-listT {
+    margin-top: 30px; /* Add space before the file list */
+    /* color: #333333; */
+  }
+  
+  .file-itemT {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid #e0e0e0;
+    padding: 15px 15px;
+    transition: background-color 0.3s; 
+    position: relative;
+}
+  
+  .file-itemT:hover {
+    background-color: #f1f1f1; 
+  }
+  .delete-iconT {
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 1px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s; 
+  }
+  
+  .delete-iconT:hover {
+    font-size:10px;
+    color: red;
+  }
+  
+  .file-detailsT {
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-iconT {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-color: #e0e0e0;
+    margin-right: 15px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    color: #555;
+    transition: background-color 0.3s;
+  }
+  
+  .file-iconT:hover {
+    background-color: #7494ec; 
+    color: #fff; 
+  }
+  
+  .file-nameT {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .file-uploaderT {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .file-sizeT {
+    margin-right: 30px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .file-icon-linkT {
+    text-decoration: none;
+  }
+  
+  .file-linkT {
+    text-decoration: none;
+    color: #145972;
+    font-weight: bold;
+  }
+  
+  .file-linkT:hover {
+    color:#000000;
+    text-decoration: underline;
+  }
+  
